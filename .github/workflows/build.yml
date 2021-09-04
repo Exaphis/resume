@@ -30,11 +30,11 @@ jobs:
       - name: Compile resume
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: resume.tex
+          root_file: main.tex
       
       # Rename
       - name: Rename pdf
-        run: mv resume.pdf 'Kevin Wu Resume.pdf'
+        run: mv main.pdf 'Kevin Wu Resume.pdf'
       
       # Upload release
       - name: Release
