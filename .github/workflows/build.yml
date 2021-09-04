@@ -34,7 +34,7 @@ jobs:
       
       # Rename
       - name: Rename pdf
-        run: mv main.pdf 'Kevin Wu Resume.pdf'
+        run: mv main.pdf resume.pdf
       
       # Upload release
       - name: Release
@@ -42,5 +42,5 @@ jobs:
         with:
           tag: v1
           commit: main
-          artifacts: 'Kevin Wu Resume.pdf'
+          artifacts: resume.pdf
           token: ${{ secrets.GITHUB_TOKEN }}
