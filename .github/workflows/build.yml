@@ -24,17 +24,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       # Compile resume
       - name: Compile resume
-      - uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v2
         with:
           root_file: resume.tex
       
       # Rename
       - name: Rename pdf
-      - run: mv resume.pdf 'Kevin Wu Resume.pdf'
+        run: mv resume.pdf 'Kevin Wu Resume.pdf'
       
       # Upload release
       - name: Release
