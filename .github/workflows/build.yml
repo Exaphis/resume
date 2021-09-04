@@ -36,6 +36,15 @@ jobs:
       - name: Rename pdf
         run: mv main.pdf resume.pdf
       
+      # Delete previous release
+      - name: Delete previous release
+        uses: dev-drprasad/delete-tag-and-release@v0.2.0
+        with:
+          delete_release: true
+          tag_name: v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
       # Upload release
       - name: Release
         uses: ncipollo/release-action@v1
