@@ -38,7 +38,8 @@ jobs:
       
       # Upload release
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: ncipollo/release-action@v1
         with:
-          files: 'Kevin Wu Resume.pdf'
-          name: v1
+          tag: v1
+          commit: main
+          artifacts: 'Kevin Wu Resume.pdf'
