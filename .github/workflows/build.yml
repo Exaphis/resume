@@ -43,3 +43,4 @@ jobs:
           tag: v1
           commit: main
           artifacts: 'Kevin Wu Resume.pdf'
+          token: ${{ secrets.GITHUB_TOKEN }}
