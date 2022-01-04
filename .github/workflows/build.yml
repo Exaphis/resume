@@ -32,6 +32,10 @@ jobs:
         with:
           root_file: main.tex
       
+      # View logs
+      - name: View logs
+        run: cat main.log
+      
       # Rename
       - name: Rename pdf
         run: mv main.pdf resume.pdf
