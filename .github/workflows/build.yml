@@ -31,29 +31,19 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
-      
+
       # View logs
       - name: View logs
         run: cat main.log
-      
+
       # Rename
       - name: Rename pdf
-        run: mv main.pdf resume.pdf
-      
-      # Delete previous release
-      - name: Delete previous release
-        uses: dev-drprasad/delete-tag-and-release@v0.2.0
+        run: mv main.pdf 'Kevin Wu Resume.pdf'
+
+      # Add to the repo
+      - name: Commit pdf to repo
+        uses: EndBug/add-and-commit@v9
         with:
-          delete_release: true
-          tag_name: v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      # Upload release
-      - name: Release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: v1
-          commit: main
-          artifacts: resume.pdf
-          token: ${{ secrets.GITHUB_TOKEN }}
+          default_author: github_actions
+          add: 'Kevin Wu Resume.pdf'
+
